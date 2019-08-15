@@ -1,0 +1,39 @@
+def commit_status_created(data_json):
+    # Build status created
+    # A build system, CI tool, or another vendor recognizes that a user recently pushed a commit and ...
+    # ... updates the commit with its status.
+
+    repository = data_json['repository']
+    # repository_scm = repository['scm']
+    repository_name = repository['name']
+    repository_link = repository['links']['html']['href']
+
+    actor = data_json['actor']
+    actor_name = actor['display_name']
+    actor_profile = actor['links']['html']['href']
+
+    commit_status = data_json['commit_status']
+
+    name = commit_status['name']
+    description = commit_status['description']
+    state = commit_status['state']
+    url = commit_status['url']
+    typee = commit_status['type']
+
+    message = "Build status created on [{}]({}) by [{}]({})" \
+              " \nName: {} " \
+              " \nState: {}" \
+              " \nType: {}" \
+              " \nDescription: {}" \
+              " \nUrl to the vendor: {}".format(repository_name,
+                                                repository_link,
+                                                actor_name,
+                                                actor_profile,
+                                                name,
+                                                state,
+                                                typee,
+                                                description,
+                                                url
+                                                )
+
+    return message
