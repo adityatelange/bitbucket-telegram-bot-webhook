@@ -1,5 +1,5 @@
 # Bitbucket WebHook Updates Telegram Bot
-[![HitCount](http://hits.dwyl.io/AdityaTelange/bitbucket-telegram-bot-webhook.svg)](http://hits.dwyl.io/AdityaTelange/bitbucket-telegram-bot-webhook)
+
 ## introduction
 ```
 This telegram bot uses webhooks to integrate applications with Bitbucket Cloud.
